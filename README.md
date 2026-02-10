@@ -36,3 +36,5 @@
 
 4. Собрать для production:
    npm run build
+
+**Рабочее демо:** https://nastasia-biad.github.io/contact-book-app/
