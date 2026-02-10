@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книга контактов</title>
+    
+  <script type="module" crossorigin src="/contact-book-app/assets/js/main-5e0c3517.js"></script>
+  <link rel="stylesheet" href="/contact-book-app/assets/css/index-265385db.css">
+</head>
+
+<body>
+    <div class="app">
+        <!-- Меню -->
+        <nav class="menu">
+            <div class="menu__container container">
+                <div class="menu__logo">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAWCAYAAADNX8xBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEtSURBVHgBrVTLTcQwEH1jB86UkBKWDkIFiFsESNABlAAVABWgvSFx2NBBOiB0kBJ84hCIh7FBK7G2NxvwkyJ5xpM3v5cQzj8qQK/AOMBcDHSIZ+rcsQDrRxBasH3ZmYBIktId9Oc6eSFPCaYWVvc7E6mxFDJpRC1Qs9gwhDPLyACFTCgm7g2Yl99HOpZZlvOJGD3eZSuNMt6u+R6aV3JaxMLTrRHdoCGztp+oB9nbVHiaSMNEnGY+0Ygq8LG9TIVvGTZf45QN9vHgzQFX4rtIRWfTUaqin7Vz9zstVV4GCL/LsCK3dktHfksx1FyKDF43ycJhu7WnSBz8HQcyCIkGvGEKo2qmiaL6mUY4bDVWMod261suZqOGrL+RP7USI+qQAQp7dCLrXOI/EO19AVswXZgzR5mvAAAAAElFTkSuQmCC" alt="Книга контактов" class="menu__icon">
+                    <span class="menu__title">Книга контактов</span>
+                </div>
+                <div class="menu__buttons">
+                    <button class="btn btn--danger menu__btn-add-contact" id="addContactBtn" type="button">
+                        <span class="btn__text">Добавить контакт</span>
+                        <img src="/contact-book-app/assets/img/plus-c5bece37.svg" alt="Добавить" class="btn__icon">
+                    </button>
+                    <button class="btn btn--secondary menu__btn-groups" id="groupsBtn" type="button">
+                        <span class="btn__text">Группы</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Основной контент -->
+        <main class="content">
+            <div class="container">
+                <div class="contacts">
+                    <div class="contacts__empty" id="emptyState">
+                        <p>Список контактов пуст</p>
+                    </div>
+                    <div class="contacts__list" id="contactsList">
+                        <!--  -->
+                    </div>
+                    <button class="btn btn--danger contacts__add-btn-mobile" id="addContactBtnMobile" type="button">
+                        <span class="btn__text">Добавить контакт</span>
+                        <img src="/contact-book-app/assets/img/plus-c5bece37.svg" alt="Добавить" class="btn__icon">
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Боковая панель групп -->
+        <div class="groups-sidebar" id="groupsSidebar">
+            <div class="groups-sidebar__overlay" id="groupsSidebarOverlay"></div>
+            <div class="groups-sidebar__panel">
+                <div class="groups-sidebar__header">
+                    <h2 class="groups-sidebar__title">Группы контактов</h2>
+                    <button class="groups-sidebar__close" id="groupsSidebarClose" type="button">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEZSURBVHgBtVWxDoIwFHwgaCCRwcUPcfD/RxcWv4HBxVETQPBdbCMp7WvBesmlCTR3r+21L6EvEuaWuVFcg4HZMrupKJAyCzXGAIwezFFXWkYUB1B4xuxhkCvGBkzG9E/iGhkMbAeK8zir0Qdp7gbiO8uPE/PAPDJvzJ5k8UqxmTk4DO5KvBBMppU/mbVljtOgV6IuE1P8okYKNZBM8lBxAFHakwyzWgoV961Aw1xJHioOxLy9VoSswNyinuR0LTKwpaUhf4SDDFxR9EU4yMCX82AT6amoSE6LabL4qcD9qEmOojbB3CtZVoCLVtL6FunDkJInZj+ihQEa9EDxAc1Ob82LPj00oTjQTX8mqPvz2jPBdqNY7MqID28jZFpMfsQHwAAAAABJRU5ErkJggg==" alt="Закрыть" class="groups-sidebar__close-icon">
+                    </button>
+                </div>
+                <div class="groups-sidebar__content">
+                    <div class="groups-sidebar__add">
+                        <input type="text" class="groups-sidebar__input" id="sidebarGroupInput"
+                            placeholder="Название группы" maxlength="50">
+                        <button class="btn btn--outline groups-sidebar__add-btn" id="sidebarAddBtn" type="button">
+                            Добавить
+                        </button>
+                    </div>
+                    <div class="groups-sidebar__list" id="sidebarGroupsList">
+                        <!--  -->
+                    </div>
+                </div>
+                <div class="groups-sidebar__footer">
+                    <button class="btn btn--outline groups-sidebar__cancel" id="sidebarCancelBtn" type="button">
+                        Отмена
+                    </button>
+                    <button class="btn btn--primary groups-sidebar__save" id="sidebarSaveBtn" type="button">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальное окно контакта -->
+        <div class="modal modal--contact" id="contactModal">
+            <div class="modal__overlay" id="contactModalOverlay"></div>
+            <div class="modal__content">
+                <div class="modal__header">
+                    <h3 class="modal__title" id="contactModalTitle">Добавить контакт</h3>
+                    <button class="modal__close" id="contactModalClose" type="button">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEZSURBVHgBtVWxDoIwFHwgaCCRwcUPcfD/RxcWv4HBxVETQPBdbCMp7WvBesmlCTR3r+21L6EvEuaWuVFcg4HZMrupKJAyCzXGAIwezFFXWkYUB1B4xuxhkCvGBkzG9E/iGhkMbAeK8zir0Qdp7gbiO8uPE/PAPDJvzJ5k8UqxmTk4DO5KvBBMppU/mbVljtOgV6IuE1P8okYKNZBM8lBxAFHakwyzWgoV961Aw1xJHioOxLy9VoSswNyinuR0LTKwpaUhf4SDDFxR9EU4yMCX82AT6amoSE6LabL4qcD9qEmOojbB3CtZVoCLVtL6FunDkJInZj+ihQEa9EDxAc1Ob82LPj00oTjQTX8mqPvz2jPBdqNY7MqID28jZFpMfsQHwAAAAABJRU5ErkJggg==" alt="Закрыть" class="modal__close-icon">
+                    </button>
+                </div>
+                <form class="modal__form" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-group__label" for="contactName">Имя *</label>
+                        <input class="form-group__input" type="text" id="contactName" required
+                            placeholder="Введите ФИО контакта" maxlength="100">
+                        <div class="form-group__error" id="contactNameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group__label" for="contactPhone">Номер телефона *</label>
+                        <input class="form-group__input" type="tel" id="contactPhone" required
+                            placeholder="+7 (___) ___-__-__" maxlength="18">
+                        <div class="form-group__error" id="contactPhoneError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group__label" for="groupToggle">Группа *</label>
+                        <div class="custom-dropdown">
+                            <button class="custom-dropdown__toggle" type="button" id="groupToggle"
+                                aria-label="Выберите группу" aria-haspopup="listbox" aria-expanded="false">
+                                <span class="custom-dropdown__selected placeholder">Выберите группу</span>
+                                <svg class="custom-dropdown__arrow" width="12" height="7" viewBox="0 0 12 7"
+                                    fill="none">
+                                    <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </button>
+                            <div class="custom-dropdown__menu" id="groupDropdown" role="listbox">
+                                <!--  -->
+                            </div>
+                            <input type="hidden" id="contactGroup" name="group" required>
+                        </div>
+                        <div class="form-group__error" id="contactGroupError"></div>
+                    </div>
+                    <div class="modal__buttons">
+                        <button type="button" class="btn btn--outline modal__cancel"
+                            id="contactModalCancel">Отмена</button>
+                        <button type="submit" class="btn btn--primary" id="contactModalSubmit">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Модальное окно подтверждения удаления -->
+        <div class="modal modal--confirm" id="confirmModal">
+            <div class="modal__overlay" id="confirmModalOverlay"></div>
+            <div class="modal__content">
+                <div class="modal__header">
+                    <h3 class="modal__title">Удалить группу?</h3>
+                    <button class="modal__close" type="button" id="confirmModalClose">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEZSURBVHgBtVWxDoIwFHwgaCCRwcUPcfD/RxcWv4HBxVETQPBdbCMp7WvBesmlCTR3r+21L6EvEuaWuVFcg4HZMrupKJAyCzXGAIwezFFXWkYUB1B4xuxhkCvGBkzG9E/iGhkMbAeK8zir0Qdp7gbiO8uPE/PAPDJvzJ5k8UqxmTk4DO5KvBBMppU/mbVljtOgV6IuE1P8okYKNZBM8lBxAFHakwyzWgoV961Aw1xJHioOxLy9VoSswNyinuR0LTKwpaUhf4SDDFxR9EU4yMCX82AT6amoSE6LabL4qcD9qEmOojbB3CtZVoCLVtL6FunDkJInZj+ihQEa9EDxAc1Ob82LPj00oTjQTX8mqPvz2jPBdqNY7MqID28jZFpMfsQHwAAAAABJRU5ErkJggg==" alt="Закрыть" class="modal__close-icon">
+                    </button>
+                </div>
+                <div class="modal__body">
+                    <p>Удаление группы повлечет за собой удаление контактов, связанных с этой группой</p>
+                </div>
+                <div class="modal__buttons">
+                    <button type="button" class="btn btn--danger" id="confirmDelete">Да, удалить</button>
+                    <button type="button" class="btn btn--outline" id="confirmCancel">Отмена</button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Контейнер для тостов -->
+        <div class="toast-container" id="toastContainer"></div>
+    </div>
+
+    
+</body>
+
+</html>
